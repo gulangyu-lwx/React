@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="file" id="file" />
+<img src="" id="imgPreview">
+<script>
+    document.querySelector('#file').addEventListener('change', (fileChoosed) => {
+        const reader = new FileReader();
+        reader.readAsText(fileChoosed.target.files[0]); //发起异步请求
+        reader.onload = function (readRes) {
+            document.querySelector('#imgPreview').src = readRes.target.result
+        }
+    })
+</script>
+.
+
+<body>
+
+</body>
+
+</html>
